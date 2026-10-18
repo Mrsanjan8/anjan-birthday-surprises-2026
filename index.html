@@ -180,13 +180,18 @@ footer {
     <h2>My Greatest Boyfriend</h2>
     <!-- YOUR MP3 SONG -->
     <div class="music-box">
-        <p>🎵 A little song for my favorite person</p>
-        <audio id="birthdaySong" controls loop preload="auto">
-            <source src="b78efd67-b728-46a7-80c0-ad237486af80.mp3"
-                    type="audio/mpeg">
-            Your browser does not support audio.
-        </audio>
-    </div>
+    <p>🎵 Crazier — Ysabelle Cover ❤️</p>
+    <iframe
+        id="birthdaySong"
+        width="100%"
+        height="180"
+        src="https://www.youtube-nocookie.com/embed/-Ww8730zgzk?playsinline=1"
+        title="Crazier - Ysabelle Cover"
+        frameborder="0"
+        allow="autoplay; encrypted-media; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+</div>
     <!-- YOUR BIRTHDAY LETTER -->
     <div class="message">Happy birthday, my dear! 🎂🎉
 I pray that you get to experience all the happiness that love, life, and wealth can bring you.
@@ -238,20 +243,19 @@ function startSurprise() {
     showScene('scene3');
     const song = document.getElementById('birthdaySong');
     if (song) {
-        song.play().catch(() => {
-            // If automatic playback is blocked,
-            // Anjan can press PLAY on the audio player.
-        });
+        song.src =
+            'https://www.youtube-nocookie.com/embed/-Ww8730zgzk?autoplay=1&playsinline=1';
+        song.allow = 'autoplay; encrypted-media; picture-in-picture';
     }
 }
 function watchAgain() {
     const song = document.getElementById('birthdaySong');
     if (song) {
-        song.pause();
-        song.currentTime = 0;
+        song.src = '';
     }
     showScene('scene1');
 }
+
 </script>
 </body>
 </html>
